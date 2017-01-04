@@ -37,7 +37,7 @@ function openlayers_mapfish_menu()
     $items = array();
     $items['admin/structure/mapfish/settings'] = array(
         'page callback' => 'drupal_get_form',
-        'description' => 'Formular zum Absenden einer Supportanfrage',
+        'description' => 'Konfiguration der Mapfish-Connection',
         'title' => 'MapFish',
         'page arguments' => array('openlayers_mapfish_configure'),        
         'access arguments' => array('administer mapfish form'),
