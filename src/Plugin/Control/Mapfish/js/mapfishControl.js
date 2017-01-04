@@ -46,7 +46,7 @@ ol.inherits(mapfishControl, ol.control.Control);
                     layerReverse = mapOL.getLayers();
                     layerReverse.forEach(function( layer ) 
                     {
-                        if(layer.getVisible() && layer.getProperties().name != 'layer_measure' )
+                        if(layer.getVisible() && layer.getProperties().name !== 'layer_measure' )
                         {
                             var layer_ = new Object();
                             layer_.baseURL = layer.getSource().getUrls()[0];
@@ -60,7 +60,6 @@ ol.inherits(mapfishControl, ol.control.Control);
                     });
                     map.layers = map.layers.reverse();
                     console.log(JSON.stringify(json));
-
 
                     $('#mapfish').html('waiting');
                     $('#mapfish').prop("disabled",true);

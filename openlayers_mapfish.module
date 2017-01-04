@@ -53,7 +53,7 @@ function openlayers_mapfish_permission()
 {
     $permissions = array();
     $permissions['administer mapfish settings'] = array(
-        'title' => t('Administer Redmine Ticket Settings'),
+        'title' => t('Administer Mapfish Settings'),
         'description' => t('Perform administration tasks for Mapfish Settings.'),
     );
     $permissions['administer mapfish request'] = array(
