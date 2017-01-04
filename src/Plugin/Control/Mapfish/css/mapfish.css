@@ -1,0 +1,15 @@
+.mapfish-button
+{
+  top: 225px;
+  left: .5em;
+  width:auto!important;
+}
+.ol-touch .mapfish-button
+{
+  top: 225px;
+}
+button
+{
+    width:auto!important;
+    padding: 5px !important;
+}

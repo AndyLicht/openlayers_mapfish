@@ -1,0 +1,16 @@
+<?php
+
+module_load_include('inc','openlayers','modules/openlayers_mapfish/install/openlayers_mapfish.Variables');
+
+function openlayers_mapfish_install()
+{
+    openlayers_mapfish_install_variables();
+    drupal_flush_all_caches();
+}
+
+function openlayers_mapfish_uninstall()
+{
+    openlayers_mapfish_uninstall_variables();
+}
+    
+   

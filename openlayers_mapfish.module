@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Openlayers Custom Controls
+ */
+
+/**
+ * Implements hook_ctools_plugin_api()
+ */
+
+module_load_include('inc','openlayers','modules/openlayers_mapfish/content/openlayers_mapfish.createAdminForm');
+module_load_include('inc','openlayers','modules/openlayers_mapfish/mapfish/openlayers_mapfish.communicationMapFish');
+
+
+
+
+function openlayers_mapfish_ctools_plugin_api($module, $api) {
+  $path = drupal_get_path('module', 'openlayers_mapfish') . '/includes';
+  return array(
+    'version' => 1,
+    'path' => $path,
+  );
+}
+
+function openlayers_mapfish($form, &$form_state, $map_arg = NULL) {
+	$path = drupal_get_path('module','openlayers_mapfish');
+	
+	$form['#attach']['mapfishpath'] = array(
+		'#path' => $path,
+	);
+	return $form;
+}
+
+//needed by the mapfish plugin
+function openlayers_mapfish_menu()
+{
+    $items = array();
+    $items['admin/structure/mapfish/settings'] = array(
+        'page callback' => 'drupal_get_form',
+        'description' => 'Formular zum Absenden einer Supportanfrage',
+        'title' => 'MapFish',
+        'page arguments' => array('openlayers_mapfish_configure'),        
+        'access arguments' => array('administer mapfish form'),
+    );
+    $items['admin/structure/mapfish/request'] = array(
+        'page callback' => 'openlayers_mapfish_request',
+        'access arguments' => array('administer mapfish request'),
+    );
+    return $items;
+}
+
+function openlayers_mapfish_permission() 
+{
+    $permissions = array();
+    $permissions['administer mapfish settings'] = array(
+        'title' => t('Administer Redmine Ticket Settings'),
+        'description' => t('Perform administration tasks for Mapfish Settings.'),
+    );
+    $permissions['administer mapfish request'] = array(
+        'title' => t('Administer Mapfish Request'),
+        'description' => t('Perform administration tasks for Mapfish Request.'),
+      );
+    return $permissions;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
