@@ -44,14 +44,10 @@ ol.inherits(mapfishControl, ol.control.Control);
                     map.scale = getcurrentScale(mapOL.getView().getResolution(),mapOL.getView().getProjection().getUnits());
                     
                     layerReverse = mapOL.getLayers();
-                    console.log('Layer:')
-                    console.log(layerReverse);
                     layerReverse.forEach(function( layer ) 
                     {
-                        if(layer.getVisible())
+                        if(layer.getVisible() && layer.getProperties().name != 'layer_measure' )
                         {
-                            console.log(layer.getVisible());
-                            console.log(layer);
                             var layer_ = new Object();
                             layer_.baseURL = layer.getSource().getUrls()[0];
                             layer_.imageFormat = "image/png";
