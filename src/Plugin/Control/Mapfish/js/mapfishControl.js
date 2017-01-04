@@ -67,7 +67,7 @@ ol.inherits(mapfishControl, ol.control.Control);
                     $.ajax(
                     {
                         method:'POST',
-                        url: window.location.protocol + "//" + window.location.host + "/drupal_ol3/admin/structure/mapfish/request",
+                        url: window.location.protocol + "//" + window.location.host + "/geoportal3/admin/structure/mapfish/request",
                         data: {mapdata:json}
                     })
                     .done(function( data ) 
